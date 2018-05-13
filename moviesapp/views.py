@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 
 app = Flask(__name__)
 
@@ -14,4 +14,18 @@ def index():
 
 @app.route('/recommend/<int:id_film>/')
 def content(id_film):
-  return '%s' % id_film
+  inputs  = {
+    "_input": [
+      {"id_film": id_film}
+    ]
+  }
+
+  results = {
+    "_results": [
+      { "id": "645657", "name": "Eternal sunshine of the spotless mind" },
+      { "id": "543556", "name": "500 Days of Summer" },
+      { "id": "873453", "name": "Lost in Translation" }
+    ]
+  }
+  return jsonify(inputs)
+  #return jsonify(results)
