@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, jsonify
 
 app = Flask(__name__)
 
@@ -9,7 +9,7 @@ app.config.from_object('config')
 @app.route('/')
 @app.route('/index/')
 def index():
-  return render_template('index.html')
+  return "index"
 
 
 @app.route('/recommend/<int:id_film>/')
