@@ -1,6 +1,7 @@
-env/
 *.pyc
 __pycache__
+env/
 app.db
+moviesapp/tests/*.db
 geckodriver.log
 .cache/
