@@ -11,5 +11,7 @@ app.config.from_object('config')
 def index():
   return render_template('index.html')
 
-if __name__ == "__main__":
-  app.run()
+
+@app.route('/recommend/<int:id_film>/')
+def content(id_film):
+  return '%s' % id_film
